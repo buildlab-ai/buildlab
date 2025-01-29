@@ -32,5 +32,5 @@ BuildLab is an innovative platform designed to revolutionize how developers buil
 
 ## Upcoming Features
 
-- [] RAG + vector search for teammate suggestion
-- [] Choose your desired model from the models list
+- [ ] RAG + vector search for teammate suggestion
+- [ ] Choose your desired model from the models list
