@@ -1,7 +1,9 @@
 # BuildLab
 
+[![Twitter Follow](https://img.shields.io/twitter/follow/BuildLabAI?style=social)](https://x.com/buildlab_ai)
+
 ### A project that builds projects
-BuildLab is an innovative platform designed to revolutionize how developers build, explore, and collaborate on projects. You just need to query and instruct AI to build your projects, and in minutes your project is ready, which is editable and runs in the inbuilt browser and terminal.
+BuildLab is an innovative platform designed to revolutionize how developers build, explore, and collaborate on projects. You just need to query and instruct LLM Agent to build your projects, and in minutes your project is ready, which is editable and runs in the inbuilt browser and terminal.
 
 ## Features
 
@@ -16,26 +18,19 @@ BuildLab is an innovative platform designed to revolutionize how developers buil
 ### 3. **Memory-Enhanced Interactions**
 - Supports follow-up questions with context awareness, enhancing user-AI interactions.
 
-### 4. **Explore Section**
-- Stay updated with the latest technology trends and news.
-- Curated feeds tailored to developers.
-
-### 5. **Create Space**
+### 4. **Create Space**
 - A private workspace for developers to create projects securely.
 - Collaborate by adding other developers to your space.
 
-### 6. **Integrated AI and Group Chat**
+### 5. **Integrated AI and Group Chat**
 - Use `@ai` to interact with the AI for assistance and instructions.
 - Group chat functionality for seamless communication with team members and AI.
 
-## Tech Stack
+### 6. **Explore Section**
+- Stay updated with the latest technology trends and news.
+- Curated feeds tailored to developers.
 
-### Frontend:
-- **React + TSX (Vite):** High-performance, modern framework for building user interfaces.
-- **Tailwind CSS:** Utility-first framework for styling.
-- **ShadCN:** Component library for beautiful, accessible UI elements.
+## Upcoming Features
 
-### Backend:
-- **Node.js:** Scalable and efficient runtime for server-side logic.
-
-
+- [] RAG + vector search for teammate suggestion
+- [] Choose your desired model from the models list
