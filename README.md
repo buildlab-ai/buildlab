@@ -36,6 +36,42 @@ BuildLab is an innovative platform designed to revolutionize how developers buil
 - [ ] 🔍 RAG + Vector Search for Teammate Suggestions
 - [ ] 🤖 Choose Your Desired Model from the Models List
 
+## ⚒️ Installation Guide
+
+### Client
+
+1. Navigate to the client directory:
+    ```sh
+    cd app/client
+    ```
+
+2. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+3. Start the development server:
+    ```sh
+    npm run dev
+    ```
+
+### Server
+
+1. Navigate to the server directory:
+    ```sh
+    cd app/server
+    ```
+
+2. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+3. Start the server:
+    ```sh
+    node server.js
+    ```
+
 ## 🤝 Contribution
 
 We welcome contributions from the community! To contribute to BuildLab, please follow these steps:
