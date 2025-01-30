@@ -27,10 +27,6 @@ BuildLab is an innovative platform designed to revolutionize how developers buil
 - Use `@ai` to interact with the AI for assistance and instructions. 🤖💡
 - Group chat functionality for seamless communication with team members and AI. 📢
 
-### 🌎 6. **Explore Section**
-- Stay updated with the latest technology trends and news. 📡
-- Curated feeds tailored to developers. 📰
-
 ## 🔜 Upcoming Features
 
 - [ ] 🔍 RAG + Vector Search for Teammate Suggestions
