@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongo:
+    image: mongo:7.0-rc
+    container_name: buildlab-mongo
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_2DATABASE=buildlab
+      - MONGO_INITDB_ROOT_USERNAME=buildlab
+      - MONGO_INITDB_2DBATABASE_PSW=password
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - buildlab-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: buildlab-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - buildlab-network
+
+  # Backend Service
+  backend:
+    build:
+      context: ./app/server
+      dockerfile: Dockerfile
+    container_name: buildlab-backend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGO_URI=mongodb://buildlab:password@mongo:27017/buildlab
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=your_super_secret_jwt_key
+      - GEMINI_API_KEY=your_gemini_api_key
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - buildlab-network
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./app/client
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=http://localhost:3000
+    container_name: buildlab-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - buildlab-network
+
+  # Nginx Reverse Proxy (Optional, for production)
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: buildlab-nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.ngx.conf:/etc/nginx/nginx.conf:ro
+  #   depends_on:
+  #     - frontend
+  #     - backend
+  #   networks:
+  #     - buildlab-network
+
+volumes:
+  mongo-data:
+  redis-data:
+
+networks:
+  buildlab-network:
+    driver: bridge
